@@ -1,0 +1,24 @@
+
+<%- include("partials/header"); -%> 
+<h1>Read, Write and Expand the World!</h1>
+<p><%=text%></p>
+<!-- <h2>Compose a blog!</h2>
+<blockquote>
+    <p>"There’s no other place that combines such an excellent level of writing with a truly engaged and active community. Daily Journal is truly where ideas are born, shared, and spread."</p>
+</blockquote> -->
+<!-- <a href="/compose"><button type="submit" name="buttonCompose" class="btn btn-success">Compose</button></a> -->
+
+<%posts.forEach(function(post){%>
+    <!-- <figure class="quote"> -->
+        <h1><%=post.title%></h1>
+    <!-- <blockquote> -->
+    <p>
+        <%=post.body.substring(0,100)+" ... "%>
+        <a href="/posts/<%=post.title %>">Read More</a>
+    </p>
+<!-- </blockquote> -->
+    <!-- </figure> -->
+    
+<%});%>
+
+<%- include("partials/footer"); -%>
