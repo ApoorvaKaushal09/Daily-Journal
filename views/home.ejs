@@ -1,24 +1,32 @@
 
 <%- include("partials/header"); -%> 
-<h1>Read, Write and Expand the World!</h1>
-<p><%=text%></p>
-<!-- <h2>Compose a blog!</h2>
+<div class="headerImage">
+    <div class="heading">
+        <h1 class="headingTitle">Read, Write and Expand the World!</h1>
+<p class="headingText">If you have a story to tell, knowledge or experience to share, <br>or a perspective to offer — welcome home. Here, your writing <br>can thrive in a network supported by millions of readers</p>
+</div>
+</div>
+
+<h2>Compose a blog!</h2>
 <blockquote>
     <p>"There’s no other place that combines such an excellent level of writing with a truly engaged and active community. Daily Journal is truly where ideas are born, shared, and spread."</p>
-</blockquote> -->
-<!-- <a href="/compose"><button type="submit" name="buttonCompose" class="btn btn-success">Compose</button></a> -->
+</blockquote>
+<a href="/compose"><button type="submit" name="buttonCompose" class="composeButton btn btn-success">Compose</button></a>
 
 <%posts.forEach(function(post){%>
-    <!-- <figure class="quote"> -->
+    <figure class="quote">
         <h1><%=post.title%></h1>
-    <!-- <blockquote> -->
+    <blockquote>
     <p>
         <%=post.body.substring(0,100)+" ... "%>
         <a href="/posts/<%=post.title %>">Read More</a>
     </p>
-<!-- </blockquote> -->
-    <!-- </figure> -->
+</blockquote>
+<figcaption>
+    &mdash; <%=post.writer%>   </figcaption>
+    </figure>
     
 <%});%>
+
 
 <%- include("partials/footer"); -%>
